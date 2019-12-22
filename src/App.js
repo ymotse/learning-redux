@@ -6,7 +6,7 @@ import store from './stores'
 
 import Counter from './components/Counter'
 import String from './components/String'
-
+import TodoList from './components/TodoList'
 
 const App = () => {
 
@@ -20,6 +20,7 @@ const App = () => {
                 <hr />
                 <String />
                 <hr />
+                <TodoList />
 
             </Provider>
         </div>
