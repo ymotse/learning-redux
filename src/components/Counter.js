@@ -7,7 +7,7 @@ import { increment, decrement } from '../store/ducks/count'
 
 const Counter = ({ count, decrement, increment }) => (
     <div>
-        <h3 style={{background:'rgba(207, 235, 255, 0.66)'}}>Increment/Decrement Counter </h3>
+        <h3 style={{background:'rgba(207, 235, 255, 0.66)'}}>[Redux] Increment/Decrement Counter </h3>
         
         <div>
             <button onClick={decrement} style={{fontWeight:'bold'}}> - </button>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect  } from 'react'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -9,12 +9,19 @@ const Git = ({ git, requestGit }) => {
     
     const [ username, setUsername ] = useState('google')
     
+    useEffect(() => {
+        
+        if (git.data.length === undefined && git.error === false) {
+            requestGit('github')
+        }
+    },[])
+    
     return (
         <div>
-            <h3  style={{background:'rgba(207, 235, 255, 0.66)'}}>Github HTTP Request</h3>
+            <h3  style={{background:'rgba(207, 235, 255, 0.66)'}}>[Redux-Saga] Search Github user HTTP Request</h3>
             
             <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-            <button onClick={() => requestGit(username)}>Loader GIT</button>
+            <button onClick={() => requestGit(username)}>Loader Github</button>
             
             <br /> <b>Login:</b> {git.data.login}
             <br /> <b>Id:</b> {git.data.id}
