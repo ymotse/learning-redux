@@ -4,6 +4,7 @@ import createSagaMiddleware from 'redux-saga'
 import count from '../reducer/reducers/count'
 import string from '../reducer/reducers/string'
 import todos from '../reducer/reducers/todos'
+import git from '../reducer/reducers/git'
 
 import rootSaga from './sagas'
 
@@ -13,7 +14,8 @@ const store = createStore(
     combineReducers({
         count,
         string,
-        todos
+        todos,
+        git
     }),
     applyMiddleware(sagaMiddleware)
 )

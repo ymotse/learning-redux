@@ -7,9 +7,9 @@ import  * as Actions from '../actions/string'
 
 const String = ({ string, increment_string }) => (
     <div>
-        <h3 style={{background:'#94d3ffa8'}}> Increment String </h3>
+        <h3 style={{background:'rgba(207, 235, 255, 0.66)'}}> Increment String </h3>
         
-        <button onClick={increment_string} style={{background:'#ffff0052', fontWeight:'bold'}}> Increment Random String </button>
+        <button onClick={increment_string}> Increment Random String </button>
         
         <div> {string.string} </div>
     </div>

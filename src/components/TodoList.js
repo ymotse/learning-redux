@@ -7,7 +7,8 @@ import * as TodoActions from '../actions/todos';
 
 const TodoList = ({ todos, requestTodoList }) => (
     <div>
-        <h4>Using Redux-Saga</h4>
+        <h3 style={{background:'rgba(207, 235, 255, 0.66)'}}>Using Redux-Saga</h3>
+        
         <ul>
             {todos.data.map(todo => (
                 <li key={todo.id}>{todo.text}</li>

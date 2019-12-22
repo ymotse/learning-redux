@@ -7,14 +7,14 @@ import * as Actions from '../actions/count'
 
 const Counter = ({ count, decrement, increment }) => (
     <div>
-        <h3 style={{background:'rgba(255, 148, 148, 0.66)'}}>Increment/Decrement Counter </h3>
+        <h3 style={{background:'rgba(207, 235, 255, 0.66)'}}>Increment/Decrement Counter </h3>
         
         <div>
-            <button onClick={decrement} style={{background:'#ffff0052', fontWeight:'bold'}}> - </button>
+            <button onClick={decrement} style={{fontWeight:'bold'}}> - </button>
             
             <span style={{margin:10}}>{count.count}</span>
             
-            <button onClick={increment} style={{background:'#ffff0052', fontWeight:'bold'}}> + </button>
+            <button onClick={increment} style={{fontWeight:'bold'}}> + </button>
         </div>
     </div>
 )
