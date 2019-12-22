@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import  * as Actions from '../actions/string'
+import { increment_string } from '../store/ducks/string'
 
 const String = ({ string, increment_string }) => (
     <div>
@@ -11,7 +11,7 @@ const String = ({ string, increment_string }) => (
         
         <button onClick={increment_string}> Increment Random String </button>
         
-        <div> {string.string} </div>
+        <div> {string.name} </div>
     </div>
 )
 
@@ -19,6 +19,6 @@ const mapStateToProps = state => ({
     string: state.string
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators(Actions, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ increment_string }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(String)

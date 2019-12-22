@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Provider } from 'react-redux'
 
-import store from './stores'
+import store from './store'
 
 import Counter from './components/Counter'
 import String from './components/String'
@@ -13,7 +13,7 @@ const App = () => {
 
     return (
         <div>
-            <h3 style={{background:'rgba(177, 192, 202, 0.66)'}}>Example to learning Redux</h3>
+            <h3 style={{background:'#a8d6ff'}}>Example to learning Redux</h3>
             <hr />
             <Provider store={store}>
                 <Counter />

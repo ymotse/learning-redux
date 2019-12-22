@@ -1,6 +1,9 @@
 import { takeLatest, put, call } from 'redux-saga/effects'
 import axios from 'axios'
 
+import { Types as type_todos } from './ducks/todos'
+import { Types as type_git } from './ducks/git'
+
 
 function apiGet () {
     return new Promise((resolve, reject) => {
@@ -10,7 +13,7 @@ function apiGet () {
                 { id: 2, text: 'To do activity 2' },
                 { id: 3, text: 'To do activity 3' },
             ])
-        }, 1000)
+        }, 500)
     })
 }
 
@@ -28,9 +31,9 @@ function* getTodoList () {
     try {
         const response = yield call(apiGet, null)
 
-        yield put({ type: 'SUCCESS_TODO_LIST', payload: { data: response } })
+        yield put({ type: type_todos.SUCCESS_TODO_LIST , payload: { data: response } })
     } catch (err) {
-        yield put({ type: 'FAILURE_TODO_LIST', message: err.message })
+        yield put({ type: type_todos.FAILURE_TODO_LIST, message: err.message })
     }
 }
 
@@ -38,19 +41,16 @@ function* getGit (username) {
     try {
         const response = yield call(apiGit, username)
         
-        yield put({ type: 'SUCCESS_GIT', payload: { data: response } })
+        yield put({ type: type_git.SUCCESS_GIT, payload: { data: response } })
     } catch (error) {
-        yield put({ type: 'FAILURE_GIT', message: error.message })
+        yield put({ type: type_git.FAILURE_GIT, message: error.message })
     }
 }
 
 
 export default function* root () {
     yield [
-        takeLatest('REQUEST_TODO_LIST', getTodoList),
-        
-        takeLatest('REQUEST_GIT', getGit),
-        
-        // takeEvery('REQUEST_TODO_LIST', getTodoList)
+        takeLatest(type_todos.REQUEST_TODO_LIST, getTodoList),
+        takeLatest(type_git.REQUEST_GIT, getGit),
     ]
 }

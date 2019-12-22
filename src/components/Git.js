@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import * as Actions from '../actions/git'
+import { requestGit } from '../store/ducks/git'
 
 const Git = ({ git, requestGit }) => {
     
@@ -11,7 +11,7 @@ const Git = ({ git, requestGit }) => {
     
     return (
         <div>
-            <h3 style={{background:'rgba(207, 235, 255, 0.66)'}}>Github HTTP Request Redux-Saga</h3>
+            <h3  style={{background:'rgba(207, 235, 255, 0.66)'}}>Github HTTP Request</h3>
             
             <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
             <button onClick={() => requestGit(username)}>Loader GIT</button>
@@ -33,6 +33,6 @@ const mapStateToProps = state => ({
     git: state.git
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators(Actions, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ requestGit }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Git)

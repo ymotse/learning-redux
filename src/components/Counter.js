@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import * as Actions from '../actions/count'
+import { increment, decrement } from '../store/ducks/count'
 
 const Counter = ({ count, decrement, increment }) => (
     <div>
@@ -21,6 +21,6 @@ const Counter = ({ count, decrement, increment }) => (
 
 const mapStateToProps = state => ({ count: state.count })
 
-const mapDispatchToProps = dispatch => bindActionCreators(Actions, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ decrement, increment }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
