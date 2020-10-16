@@ -5,6 +5,7 @@ import count from './ducks/count'
 import string from './ducks/string'
 import todos from './ducks/todos'
 import git from './ducks/git'
+import name from './ducks/name'
 
 import rootSaga from './sagas'
 
@@ -15,7 +16,8 @@ const store = createStore(
         count,
         string,
         todos,
-        git
+        git,
+        name
     }),
     applyMiddleware(sagaMiddleware)
 )

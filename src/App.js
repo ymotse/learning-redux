@@ -8,6 +8,7 @@ import Counter from './components/Counter'
 import String from './components/String'
 import TodoList from './components/TodoList'
 import Git from './components/Git'
+import Name from './components/Name'
 
 const App = () => {
 
@@ -16,6 +17,8 @@ const App = () => {
             <h3 style={{background:'#a8d6ff'}}>Example to learning Redux</h3>
             <hr />
             <Provider store={store}>
+                <Name />
+                <hr />
                 <Counter />
                 <hr />
                 <String />
