@@ -38,6 +38,8 @@ function* getTodoList () {
 }
 
 function* getGit (username) {
+    console.log('getGit')
+    
     try {
         const response = yield call(apiGit, username)
         

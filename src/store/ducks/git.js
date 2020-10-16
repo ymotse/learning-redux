@@ -32,6 +32,8 @@ export default function git (state = INITIAL_STATE, action) {
 
 // Action Creators:
 export function requestGit(username) {
+    console.log('requestGit' , username)
+    
     return {
         type: Types.REQUEST_GIT,
         username
